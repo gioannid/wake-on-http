@@ -1,0 +1,11 @@
+services:
+  wake-on-http:
+    build: .
+    container_name: wake-on-http
+    environment:
+      - DEFAULT_MAC=00:11:22:33:44:55
+    restart: unless-stopped
+    network_mode: host
+    user: "nobody"
+    cap_add:
+      - NET_RAW

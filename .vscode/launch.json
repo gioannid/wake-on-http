@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Server",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/main.go",
+            
+            // Force output to local drive
+            "output": "C:/temp/debug/__debug_bin",
+            
+            // Set working directory to local temp
+            "cwd": "${workspaceFolder}",
+            
+            // Environment variables
+            "env": {
+                "TMPDIR": "C:/temp",
+                "TEMP": "C:/temp",
+                "TMP": "C:/temp",
+                "PORT": "9009",
+                "DEFAULT_MAC": "04:7C:16:50:81:C1",
+                "BROADCAST_ADDR": "192.168.178.255"
+            },
+            
+            // Additional dlv flags
+            "dlvFlags": [
+                "--build-flags=-o C:/temp/debug/__debug_bin.exe"
+            ]
+        }
+    ]
+}
